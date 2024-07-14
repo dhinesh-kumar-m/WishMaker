@@ -20,6 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.wishmaker.ui.theme.WishMakerTheme
 import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.layout.Box
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,10 +29,9 @@ class MainActivity : ComponentActivity() {
             WishMakerTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    GreetingText(
+                    GreetingImage(
                         message = "Good Night!",
-                        "From Dhinesh",
-                        modifier = Modifier.padding(8.dp)
+                        "From Dhinesh"
                     )
                 }
             }
@@ -73,9 +73,19 @@ fun GreetingText(message: String, from: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    Image(
-        painter = image,
-        contentDescription = null
-    )
+    Box(modifier) {
+        Image(
+            painter = image,
+            contentDescription = null
+        )
+        GreetingText(
+            message = message,
+            from = from,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        )
+
+    }
 }
 
