@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.wishmaker.ui.theme.WishMakerTheme
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +37,8 @@ fun GreetingPreview() {
 @Composable
 fun GreetingText(message: String, modifier: Modifier = Modifier) {
     Text(
-        text = message
+        text = message,
+        fontSize = 100.sp,
+        lineHeight = 116.sp,
     )
 }
