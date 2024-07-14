@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Wish Maker</string>
+    <string name="good_night_text">Good Night!</string>
+    <string name="signature_text">From Dhinesh</string>
 </resources>

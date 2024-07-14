@@ -22,6 +22,7 @@ import com.example.wishmaker.ui.theme.WishMakerTheme
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,8 +32,9 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
                     GreetingImage(
-                        message = "Good Night!",
-                        "From Dhinesh"
+                        message = stringResource(R.string.good_night_text),
+                        stringResource(R.string.signature_text),
+                        modifier = Modifier.padding(8.dp)
                     )
                 }
             }
@@ -44,7 +46,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     WishMakerTheme {
-        GreetingImage(message = "Good Night", "From Dhinesh"
+        GreetingImage(
+            message = stringResource(R.string.good_night_text),
+            stringResource(R.string.signature_text),
         )
     }
 }
